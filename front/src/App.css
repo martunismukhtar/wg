@@ -1,0 +1,112 @@
+:root {
+  --background: #ffffff;
+  --text-primary: #000;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #333;
+  --form-bg: #fff;
+}
+
+[data-theme='dark'] {
+  --background: #000;
+  --text-primary: #fff;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #808080;
+  --form-bg: #191919;
+}
+a {
+  color: var(--text-secondary);
+}
+.section{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.main-heading{
+  color:rgb(204,18,18);
+  font-size: 26px;
+}
+.underline{
+  height: 04px;
+  width: 4rem;
+  background-color: #f76c2f;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.carousel-item {
+  height: 400px;
+}
+.rbar{
+  position:absolute;
+  z-index: 999;
+  margin-top: 4px;
+  right:4px;
+}
+.lbar {
+  position:absolute;
+  z-index: 99;
+  margin-top: 4rem;
+  left:10px;
+}
+.hbar{
+  position:absolute;
+  z-index: 99;
+  margin-top: 6rem;
+  left:10px;
+}
+.right-panel{
+  position:absolute !important;
+  z-index: 999;
+  right:0;
+  width: 28rem;
+  top: 64px;
+  height: inherit;
+}
+.left-panel{
+  position:absolute !important;
+  z-index: 999;
+  left:0;
+  width: 28rem;
+  top: 156px;
+  /* height: inherit; */
+}
+.header-left-panel{
+    color: #0c63e4;
+    background-color: #e7f1ff;
+    padding: 8px!important;
+    border-radius: 2px;
+    /* margin-bottom: 5px; */
+}
+.buble{
+  /* position:absolute !important; */
+  /* z-index: 999; */
+  position: relative;
+  display: inline-block;
+  /* bottom: 2px;
+  left:50%; */
+}
+.buble .dot1 {
+  /* visibility: hidden; */
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 50% !important;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+.dot {
+  height: 55px;
+  width: 55px;
+  background-color: #bbb;
+  border-radius: 50% !important;
+  margin-right: 10px;
+  /* display: inline-block; */
+  /* text-align: center; */
+}
+.list-group-item {
+  border: 0px !important;
+}

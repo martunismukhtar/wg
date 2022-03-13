@@ -1,0 +1,441 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your super  ApplicationAPI",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "summary": "Sign in",
+                "description": "Login by email, password",
+                "operationId": "authLogin",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "email",
+                                    "password"
+                                ],
+                                "properties": {
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email",
+                                        "example": "martunis@test.com"
+                                    },
+                                    "password": {
+                                        "type": "string",
+                                        "format": "password",
+                                        "example": "12345"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong email address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/event": {
+            "get": {
+                "tags": [
+                    "Event"
+                ],
+                "summary": "List event",
+                "operationId": "c41ead8dce94da3a165556310df2c2a6",
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "2022-03-06"
+                                        },
+                                        "time": {
+                                            "type": "string",
+                                            "example": "25:53"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "location"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "path"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Event"
+                ],
+                "summary": "Post event",
+                "operationId": "e4b4c393ec957213725fc24e9fc7fe40",
+                "requestBody": {
+                    "description": "Pass event",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "name"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-03-06"
+                                    },
+                                    "time": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "20:01"
+                                    },
+                                    "location": {
+                                        "type": "string",
+                                        "example": "lccation"
+                                    },
+                                    "image": {
+                                        "description": "file to upload",
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "2022-03-06"
+                                        },
+                                        "time": {
+                                            "type": "string",
+                                            "example": "25:53"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "location"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "path"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/event/{id}": {
+            "get": {
+                "tags": [
+                    "Event"
+                ],
+                "summary": "Get Detail Event",
+                "operationId": "02ac4f6ef3a1101d8cdf3cb86289f888",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "2022-03-06"
+                                        },
+                                        "time": {
+                                            "type": "string",
+                                            "example": "25:53"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "location"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "path"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Event"
+                ],
+                "summary": "Update event",
+                "operationId": "67dca55fdbc98cbf89c8ba0e115a9f7e",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Pass event",
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "name"
+                                    },
+                                    "date": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2022-03-06"
+                                    },
+                                    "time": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "20:01"
+                                    },
+                                    "location": {
+                                        "type": "string",
+                                        "example": "location"
+                                    },
+                                    "_method": {
+                                        "type": "string",
+                                        "example": "PUT"
+                                    },
+                                    "image": {
+                                        "description": "file to upload",
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "name"
+                                        },
+                                        "date": {
+                                            "type": "string",
+                                            "example": "2022-03-06"
+                                        },
+                                        "time": {
+                                            "type": "string",
+                                            "example": "25:53"
+                                        },
+                                        "location": {
+                                            "type": "string",
+                                            "example": "location"
+                                        },
+                                        "image": {
+                                            "type": "string",
+                                            "example": "path"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Event"
+                ],
+                "summary": "Delete event",
+                "operationId": "53ff04a376e8d4962a8365a3f3d7c764",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "msg": {
+                                            "type": "string",
+                                            "example": "delete data success"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "responses": {
+            "422": {
+                "description": "Wrong credentials response",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "properties": {
+                                "message": {
+                                    "type": "string",
+                                    "example": "Sorry, wrong email address or password. Please try again"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token based Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "security": [
+        []
+    ]
+}

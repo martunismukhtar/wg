@@ -1,0 +1,25 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+        "type": "name",
+        "properties": {
+            "name": "EPSG:4326"
+        }
+    },
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    97.318123,
+                    5.051701
+                ]
+            },
+            "properties": {
+                "name": "Hoyle's Marina-Linwood: 98-08-0324-P",
+                "description": "135 S Linwood Beach, Linwood"
+            }
+        }
+    ]
+}
