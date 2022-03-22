@@ -36,6 +36,9 @@ a {
 .carousel-item {
   height: 400px;
 }
+/* .map-container{
+	cursor: pointer;
+} */
 .rbar{
   position:absolute;
   z-index: 999;
@@ -86,15 +89,12 @@ a {
   left:50%; */
 }
 .buble .dot1 {
-  /* visibility: hidden; */
   width: 120px;
   background-color: black;
   color: #fff;
   text-align: center;
   padding: 5px 0;
   border-radius: 50% !important;
- 
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
@@ -104,9 +104,14 @@ a {
   background-color: #bbb;
   border-radius: 50% !important;
   margin-right: 10px;
-  /* display: inline-block; */
-  /* text-align: center; */
 }
 .list-group-item {
   border: 0px !important;
+}
+.modal-title {
+  margin: auto;
+}
+.modal-header .btn-close {
+  padding: 0px !important;
+  margin: 0px !important;
 }
